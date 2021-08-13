@@ -1,0 +1,21 @@
+<h1><%= @employee.name  %></h1>
+
+<p><%= @employee.mobile_number  %></p>
+
+<p><%= @employee.pan_card  %></p>
+
+
+<p><%= @employee.address  %></p>
+	
+<ul>
+  <li><%= link_to "Edit", edit_employee_path(@employee) %></li>
+
+  
+  <li><%= link_to "Delete Employee", employee_path(@employee),
+                  method: :delete,
+                  data: { confirm: "Are you sure You want to delete This Employee ?" } %></li>  
+
+  <li><%= link_to "Back", employees_path %></li>
+                  
+</ul>
+

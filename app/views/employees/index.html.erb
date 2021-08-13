@@ -1,0 +1,13 @@
+<h1>Employee List</h1>
+<ul>
+	<% @employees.each do |t| %>
+		<li>
+		  <%= link_to t.name ,t %>
+		</li>
+	<% end %>
+</ul>
+
+<%= link_to "Add New Employee",new_employee_path %>
+<br>
+<br>
+<%= link_to "Back to Lotus Application Home page ",root_path%>

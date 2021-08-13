@@ -1,0 +1,27 @@
+<h1><%= @customer.name  %></h1>
+
+<p><%= @customer.email  %></p>
+
+<p><%= @customer.primary_number  %></p>
+
+<p><%= @customer.alternate_number  %></p>
+
+<p><%= @customer.address  %></p>
+	
+<ul>
+  <li><%= link_to "Edit", edit_customer_path(@customer) %></li>
+
+  <li><%= link_to "Delete Customer", customer_path(@customer),
+                  method: :delete,
+                  data: { confirm: "Are you sure You want to delete This Customer ?" } %></li>  
+
+  <li><%= link_to "Back", customers_path %></li>
+</ul>
+
+<h2>Machines</h2>
+<%= render @customer.machines %>
+
+<h2>Add a Machine:</h2>
+<%= render 'machines/form' %>
+
+

@@ -1,0 +1,22 @@
+<p>
+  <strong>Name:</strong>
+  <%= machine.name %>
+</p>
+
+<p>
+  <strong>Model_number:</strong>
+  <%= machine.model_number %>
+</p>
+
+
+<p>
+  <strong>Model_series:</strong>
+  <%= machine.model_series %>
+</p>
+
+
+<p>
+  <%= link_to 'Delete Machine', [machine.customer, machine],
+              method: :delete,
+              data: { confirm: "Are you sure You want to delete this machine?" } %>
+</p>

@@ -1,0 +1,33 @@
+<%= form_with model: @employee do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% @employee.errors.full_messages_for(:name).each do |message| %>
+    <%end%>
+  </div>
+
+  <div>
+    <%= form.label :mobile_number %><br>
+    <%= form.text_field :mobile_number %>
+    <% @employee.errors.full_messages_for(:mobile_number).each do |message| %>
+    <%end%>
+  </div>
+
+  <div>
+    <%= form.label :pan_card %><br>
+    <%= form.text_field :pan_card %>
+    <% @employee.errors.full_messages_for(:pan_card).each do
+    	|message| %>
+    <%end%>
+  </div>
+  
+  <div>
+    <%= form.label :address %><br>
+    <%= form.text_area :address %>
+    <% @employee.errors.full_messages_for(:address).each do |message| %><%end%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
