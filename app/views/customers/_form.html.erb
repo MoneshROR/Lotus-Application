@@ -1,22 +1,23 @@
 
 <%= form_with model: @customer do |form| %>
   <div>
+    <p style="text-align:center;">
     <%= form.label :name %><br>
     <%= form.text_field :name %>
     <% @customer.errors.full_messages_for(:name).each do |message| %>
     <%end%>
   </div>
   
-  <br>
   <div>
+    <p style="text-align:center;">
     <%= form.label :email %><br>
     <%= form.text_field :email %>
     <% @customer.errors.full_messages_for(:email).each do |message| %>
     <%end%>
   </div>
   
-  <br>
   <div>
+    <p style="text-align:center;">
     <%= form.label :primary_number %><br>
     <%= form.text_field :primary_number %>
     <% @customer.errors.full_messages_for(:primary_number).each do
@@ -24,22 +25,23 @@
     <%end%>
   </div>
 
-  <br>
   <div>
+    <p style="text-align:center;">
     <%= form.label :alternate_number %><br>
     <%= form.text_field  :alternate_number %>
     <% @customer.errors.full_messages_for(:alternate_number).each do |message| %>
     <%end%>
   </div>
- 
-  <br>
+
   <div>
+    <p style="text-align:center;">
     <%= form.label :address %><br>
     <%= form.text_area :address %>
     <% @customer.errors.full_messages_for(:address).each do |message| %><%end%>
   </div>
 
   <div>
+    <p style="text-align:center;">
     <%= form.submit %>
   </div>
 <% end %>

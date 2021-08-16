@@ -1,26 +1,31 @@
 <%= form_with model: [ @customer, @customer.machines.build ] do |form| %>
   <p>
+    <p style="text-align:center;">
     <%= form.label :name %><br>
     <%= form.text_field :name %>
   </p>
 
   <p>
+    <p style="text-align:center;">
     <%= form.label :model_number %><br>
     <%= form.text_field :model_number%>
   </p>
 
   <p>
+    <p style="text-align:center;">
     <%= form.label :model_series %><br>
     <%= form.text_field :model_series%>
   </p>
   
   <p>
+    <p style="text-align:center;">
     <%= form.label :Employee_id %><br>
     <%= form.select("employee_id", Employee.all.collect {|p| [ p.id ] }, {include_blank: 'None'}) %>
 
   </p>
 
   <p>
+    <p style="text-align:center;">
     <%= form.submit %>
   </p>
 <% end %>
