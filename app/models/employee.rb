@@ -1,9 +1,8 @@
 class Employee < ApplicationRecord
 	has_many :machines, dependent: :destroy
-	#has_many :customers, through: :machines
 
-    validates :name, presence: true
-    validates :mobile_number, presence: true, length: {maximum: 10}
-    validates :pan_card, presence: true
-    validates :address, presence: true, length: { minimum: 5 }	
+    validates :name, presence: { message: "must be given please" },length: { minimum: 3 }
+    validates :mobile_number, presence: { message: "must be given please" },length: { in: 10..12 }, numericality: { only_integer: true }
+    validates :pan_card, presence: { message: "must be given please" },length: { in: 3..10 }, numericality: { only_integer: true }
+    validates :address, presence:  { message: "must be given please" }, length: {minimum: 10}
 end

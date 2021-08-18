@@ -11,7 +11,7 @@
 <ul>
   <li><%= link_to "Edit", edit_customer_path(@customer) %></li>
 
-  <li><%= link_to "Delete Customer", customer_path(@customer),
+  <li><%= link_to 'Destroy', customer_path(@customer),
                   method: :delete,
                   data: { confirm: "Are you sure You want to delete This Customer ?" } %></li>  
 
@@ -21,11 +21,8 @@
 <h2>Machines</h2>
 <%= render @customer.machines %>
 <div>
-  <p style="text-align:center;">
-  </p>
   <h2>Add a Machine:</h2>
 </div>
-
 <%= render 'machines/form' %>
-
+<!%= render 'machines/form1' %>
 

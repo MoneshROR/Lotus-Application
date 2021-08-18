@@ -8,12 +8,20 @@
   <%= machine.model_number %>
 </p>
 
-
 <p>
   <strong>Model_series:</strong>
   <%= machine.model_series %>
 </p>
 
+<p>
+  <strong>Employee_id:</strong>
+  <%= machine.employee_id %>
+</p>
+
+<p>
+  <strong>Employee_name:</strong>
+  <%= machine.employee.name %>
+</p>
 
 <p>
   <%= link_to 'Delete Machine', [machine.customer, machine],

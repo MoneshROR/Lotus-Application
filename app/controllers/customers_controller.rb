@@ -25,7 +25,7 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
-  def update
+  def update 
     @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
       redirect_to @customer
@@ -35,10 +35,9 @@ class CustomersController < ApplicationController
 
   end
 
-  def destroy
+  def destroy  
     @customer = Customer.find(params[:id])
     @customer.destroy
-
     redirect_to root_path
   end
 

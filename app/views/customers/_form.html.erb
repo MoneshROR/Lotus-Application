@@ -1,47 +1,40 @@
-
 <%= form_with model: @customer do |form| %>
+  <% if @customer.errors.any? %>
+    <h2>Errors</h2>
+    <ul>
+      <% @customer.errors.full_messages.each do |message|%>
+        <li><%= message %></li>
+      <% end %>  
+    </ul>
+  <% end %>
   <div>
-    <p style="text-align:center;">
     <%= form.label :name %><br>
     <%= form.text_field :name %>
-    <% @customer.errors.full_messages_for(:name).each do |message| %>
-    <%end%>
   </div>
   
   <div>
-    <p style="text-align:center;">
     <%= form.label :email %><br>
     <%= form.text_field :email %>
-    <% @customer.errors.full_messages_for(:email).each do |message| %>
-    <%end%>
   </div>
   
   <div>
-    <p style="text-align:center;">
     <%= form.label :primary_number %><br>
     <%= form.text_field :primary_number %>
-    <% @customer.errors.full_messages_for(:primary_number).each do
-    	|message| %>
-    <%end%>
   </div>
 
   <div>
-    <p style="text-align:center;">
     <%= form.label :alternate_number %><br>
     <%= form.text_field  :alternate_number %>
-    <% @customer.errors.full_messages_for(:alternate_number).each do |message| %>
-    <%end%>
+
   </div>
 
   <div>
-    <p style="text-align:center;">
     <%= form.label :address %><br>
     <%= form.text_area :address %>
-    <% @customer.errors.full_messages_for(:address).each do |message| %><%end%>
   </div>
 
   <div>
-    <p style="text-align:center;">
     <%= form.submit %>
   </div>
+
 <% end %>
