@@ -1,8 +1,14 @@
 class CustomersController < ApplicationController
   def index
-      @customers = Customer.all  
+    @customers = Customer.cust
+    @customers = Customer.search(params[:search])
   end
-  
+
+  # def search
+   
+  #   @customers = Customer.search(params[:search])    
+  # end
+
   def show
     @customer = Customer.find(params[:id])
   end
@@ -43,7 +49,7 @@ class CustomersController < ApplicationController
 
   private
     def customer_params
-      params.require(:customer).permit(:name, :email, :primary_number, :alternate_number, :address)       
+      params.require(:customer).permit(:name, :email, :primary_number, :alternate_number, :address,:status)       
     end
 
 end

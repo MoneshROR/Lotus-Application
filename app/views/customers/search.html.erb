@@ -1,0 +1,27 @@
+<br>
+<br>
+
+<div>
+
+	<h3 style="color:blue">Search Result</h3>  
+
+    	<% @customers.each do |result| %>
+    	    
+    	    <p style="color:red"></p>  
+        	<%= result.name %><br>
+ 
+        	<%= result.email %><br>
+  
+        	<%= result.primary_number %><br>
+        	<%= result.alternate_number %><br>
+        	<%= result.address %><br>
+    	<% end %>
+</div>
+
+<div class="alert alert-success">
+  <strong>Success!</strong> This is  your search result.
+</div>
+
+<ul>
+	<li><%= link_to "Back To Home Page", root_path %></li>
+</ul>

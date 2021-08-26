@@ -33,6 +33,12 @@
     <%= form.text_area :address %>
   </div>
 
+  <div class="field">
+    <%= form.label :status %><br>
+    <%=  form.collection_select :status, Customer.statuses.map{ |a| [a.first,a.first] },  :first, :second %>
+  </div>
+
+
   <div>
     <%= form.submit %>
   </div>

@@ -24,6 +24,11 @@
 </p>
 
 <p>
+  <strong>Status:</strong>
+  <%= machine.status  %>
+</p>
+
+<p>
   <%= link_to 'Delete Machine', [machine.customer, machine],
               method: :delete,
               data: { confirm: "Are you sure You want to delete this machine?" } %>

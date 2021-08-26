@@ -15,6 +15,6 @@ class MachinesController < ApplicationController
   
   private
     def machine_params
-      params.require(:machine).permit(:name, :model_number, :model_series,:employee_id)
+      params.require(:machine).permit(:name, :model_number, :model_series,:employee_id,:status)
     end
 end

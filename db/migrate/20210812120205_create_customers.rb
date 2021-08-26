@@ -6,6 +6,7 @@ class CreateCustomers < ActiveRecord::Migration[6.1]
       t.integer :primary_number
       t.integer :alternate_number
       t.text :address
+      t.integer :status
 
       t.timestamps
     end

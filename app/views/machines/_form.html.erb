@@ -1,34 +1,35 @@
 <%= form_with model: [ @customer, @customer.machines.build ] do |form| %>
+
+
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :model_number %><br>
+    <%= form.text_field :model_number %>
+  </div>  
   
-
-  <p  style="text-align:center;">
-  <%= form.label :name %><br>
-  <%= form.select("name", Machine.all.collect {|p| [ p.name ] }, {include_blank: 'None'}) %>
-  </p>
-
-  <p style="text-align:center;">
-  <%= form.label :model_number %><br>
-  <%= form.select("model_number", Machine.all.collect {|p| 
-    [ p.model_number ] }, {include_blank: 'None'}) %>
-
-  </p>
-
-  <p style="text-align:center;">
-  <%= form.label :model_series %><br>
-  <%= form.select("model_series", Machine.all.collect {|p| 
-    [ p.model_series ] }, {include_blank: 'None'}) %>
-
-  </p>
-
+  <div>
+    <%= form.label :model_series %><br>
+    <%= form.text_field :model_series %>
+  </div>   
 
   <p>
-    <p style="text-align:center;">
+   
     <%= form.label :name %><br>
     <%= form.select("employee_id", Employee.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'None'}) %>
   </p>  
 
+
+  <div class="field">
+    <%= form.label :status %><br>
+    <%=  form.collection_select :status, Machine.statuses.map{ |a| [a.first,a.first] },  :first, :second %>
+  </div>
+<br>
   <p>
-    <p style="text-align:center;">
+   
     <%= form.submit%>
   </p>
 <% end %>
